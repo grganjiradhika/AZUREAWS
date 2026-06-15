@@ -13,6 +13,7 @@ app.use(express.json());
 const productRoutes = require('./routes/ProductRoutes');
 app.use('/api/products', productRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/products', productRoutes);
 
 app.get('/', (req, res) => {
     res.send('Server Working');
