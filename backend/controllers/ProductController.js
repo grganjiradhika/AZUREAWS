@@ -12,3 +12,15 @@ exports.insertProduct = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 }
+exports.getProducts = async (req, res) => {
+    try {
+        const getProducts = await Product.find({});
+        console.log("Products retrieved:", getProducts);
+        res.status(200).json(getProducts);
+    }
+    catch (err) {
+        console.error("Error retrieving products:", err);
+        res.status(500).json({ error: err.message });
+    }
+
+}
